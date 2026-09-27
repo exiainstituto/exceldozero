@@ -70,6 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem("cetepis_hide_popup", "true");
     }
 
+      document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+    const menuLinks = document.querySelectorAll(".nav-menu a");
+
+    // Alterna o menu entre aberto e fechado ao clicar no botão das 3 linhas
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+            
+            // Troca o ícone de 'três linhas' para 'X' quando aberto
+            const icon = menuToggle.querySelector("i");
+            if (icon) {
+                icon.classList.toggle("fa-bars");
+                icon.classList.toggle("fa-xmark");
+            }
+        });
+
+        // Fecha o menu automaticamente quando o usuário clica em um link
+        menuLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("active");
+                const icon = menuToggle.querySelector("i");
+                if (icon) {
+                    icon.classList.add("fa-bars");
+                    icon.classList.remove("fa-xmark");
+                }
+            });
+        });
+    }
+});
+
     document.getElementById("popup-cetepis").style.display = "none";
   }
 </script>
