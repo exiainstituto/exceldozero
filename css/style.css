@@ -1012,3 +1012,49 @@ body {
 .offer-action {
     margin-top: 25px; /* Adiciona o espaço de aproximadamente uma linha antes do botão */
 }
+
+/* --- ESTILOS DO MENU HAMBÚRGUER --- */
+
+/* Esconde o botão do hambúrguer em telas de computador por padrão */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    color: #107c41;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* REGRAS APENAS PARA DISPOSITIVOS MÓVEIS (Até 768px de largura) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Exibe o botão das 3 linhas no celular */
+    }
+
+    /* Esconde a lista de navegação por padrão no celular */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%; /* Surge logo abaixo da barra verde-água */
+        left: 0;
+        width: 100%;
+        background-color: #f0f7f4; /* Mesmo fundo verde-água claro */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-bottom: 2px solid #d4e8dd;
+        gap: 15px;
+    }
+
+    /* Classe ativada via JavaScript quando o usuário clica no hambúrguer */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    /* Ajuste de tamanho da logo EXIA7 no celular */
+    .brand-logo {
+        max-height: 38px;
+    }
+}
