@@ -1,0 +1,1014 @@
+/* --- VARIÁVEIS DE COR E ESTILO --- */
+:root {
+    --excel-green-dark: #0e5c36;
+    --excel-green: #107c41;
+    --excel-green-light: #1f9a55;
+    --excel-accent: #21a366;
+    --excel-bg-light: #f3f9f5;
+    --dark-color: #1a1a1a;
+    --text-muted: #555555;
+    --white: #ffffff;
+    --card-shadow: 0 10px 30px rgba(16, 124, 65, 0.08);
+    --border-radius: 12px;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* --- RESET & GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garanta que o html e o body permitam rolagem livre */
+html, body {
+    overflow-x: clip; /* Em vez de hidden, use clip para evitar barras horizontais sem travar a rolagem vertical */
+    height: auto;
+}
+
+/* Adiciona margem de compensação para a rolagem suave */
+section, 
+[id] {
+    scroll-margin-top: 80px; /* Ajuste para a altura exata do seu cabeçalho/menu */
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #f8faf9;
+    color: var(--dark-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita rolagem horizontal acidental em celulares */
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- BOTÕES --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--excel-green);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--excel-green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 124, 65, 0.3);
+}
+
+.btn-large {
+    width: 100%;
+    max-width: 400px;
+}
+
+.glow-effect {
+    box-shadow: 0 0 15px rgba(31, 154, 85, 0.4);
+}
+
+.btn-header {
+    background-color: var(--excel-bg-light);
+    color: var(--excel-green);
+    border: 1px solid var(--excel-green-light);
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+.btn-header:hover {
+    background-color: var(--excel-green);
+    color: var(--white);
+}
+
+.btn-xl {
+    font-size: 1.15rem;
+    padding: 18px 30px;
+    width: 100%;
+    max-width: 480px;
+}
+
+/* --- NAVBAR RESPONSIVA --- */
+/* Torna a barra de navegação fixa no topo */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Garante que o menu fique por cima de todos os elementos */
+    background-color: #f0f7f4; /* Verde água claro */
+    border-bottom: 1px solid #d4e8dd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra leve para destacar */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.logo-badge {
+    font-weight: 800;
+    color: var(--excel-green-dark);
+    font-size: 1rem;
+}
+
+.partner-badge {
+    background: #e2f2e8;
+    color: var(--excel-green);
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--excel-green-dark);
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--excel-green);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--excel-bg-light) 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.tag-headline {
+    display: inline-block;
+    background-color: #d1ebd9;
+    color: var(--excel-green-dark);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.25;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.hero-content h1 span {
+    color: var(--excel-green);
+}
+
+.hero-subtext {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.hero-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--excel-green-dark);
+}
+
+.hero-cta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.urgency-text {
+    font-size: 0.85rem;
+    color: #d9534f;
+    font-weight: 600;
+}
+
+/* PLACEHOLDERS DE IMAGEM */
+.image-holder {
+    background: #e9f3ed;
+    border: 2px dashed #a2d2b5;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--excel-green);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.excel-card-preview {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e1e9e3;
+    position: relative;
+    width: 100%;
+}
+
+.card-badge {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: var(--excel-accent);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.course-mockup {
+    min-height: 240px;
+}
+
+.excel-big-icon {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- BENEFÍCIOS --- */
+.benefits-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.section-title h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.benefit-card {
+    background: var(--excel-bg-light);
+    padding: 25px 20px;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: var(--excel-green);
+    color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- SYLLABUS / CONTEÚDO --- */
+.syllabus-section {
+    padding: 60px 0;
+    background: #f3f7f4;
+}
+
+.syllabus-wrapper {
+    background: var(--white);
+    border-radius: 20px;
+    padding: clamp(20px, 4vw, 40px);
+    box-shadow: var(--card-shadow);
+}
+
+.syllabus-header {
+    margin-bottom: 30px;
+}
+
+.modules-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.syllabus-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.syllabus-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.syllabus-list i {
+    color: var(--excel-green);
+    font-size: 1.1rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.photo-slot {
+    min-height: 220px;
+}
+
+/* --- INSTRUTOR --- */
+.instructor-section {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.instructor-card {
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 30px;
+    align-items: center;
+    background: var(--excel-bg-light);
+    border-radius: 20px;
+    padding: clamp(20px, 4vw, 40px);
+    border: 1px solid #d8e8dd;
+}
+
+.instructor-avatar-box {
+    text-align: center;
+}
+
+.instructor-img {
+    width: clamp(150px, 30vw, 220px);
+    height: clamp(150px, 30vw, 220px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--excel-green);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.instructor-badge {
+    background: var(--excel-green-dark);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.instructor-info h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 10px 0;
+}
+
+.instructor-summary {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.experience-list h4 {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--excel-green-dark);
+}
+
+.experience-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.experience-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.experience-list i {
+    color: var(--excel-green);
+    flex-shrink: 0;
+}
+
+.instructor-quote {
+    background: var(--white);
+    padding: 12px 15px;
+    border-left: 4px solid var(--excel-green);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- OFERTA & MATRÍCULA --- */
+.offer-section {
+    padding: 60px 0;
+    background: linear-gradient(180deg, var(--white) 0%, var(--excel-bg-light) 100%);
+}
+
+.offer-box {
+    background: var(--excel-green-dark);
+    color: var(--white);
+    border-radius: 20px;
+    padding: clamp(25px, 5vw, 50px);
+    box-shadow: 0 15px 35px rgba(14, 92, 54, 0.25);
+}
+
+.special-badge {
+    background: #ffd700;
+    color: #000;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.offer-header h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    margin-bottom: 8px;
+}
+
+.offer-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.offer-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detail-item i {
+    font-size: 1.6rem;
+    color: #63e6be;
+    flex-shrink: 0;
+}
+
+.detail-item h4 {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+ .offer-action { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.cta-note {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+/* --- FOOTER --- */
+.footer {
+    padding: 25px 0;
+    background: #111;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.copyright {
+    margin-top: 5px;
+    font-size: 0.75rem;
+}
+
+/* =========================================================
+   MEDIA QUERIES (RESPONSIVIDADE PARA TABLETS E SMARTPHONES)
+   ========================================================= */
+
+/* Tablet e Telas Médias (até 992px) */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-highlights {
+        align-items: center;
+    }
+
+    .hero-cta-box {
+        align-items: center;
+        width: 100%;
+    }
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instructor-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .experience-list ul {
+        align-items: center;
+    }
+
+    .instructor-quote {
+        border-left: none;
+        border-top: 4px solid var(--excel-green);
+        border-radius: 8px;
+    }
+}
+
+/* Smartphone (até 768px) */
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none; /* Controlado via JS */
+        border-top: 1px solid #e1e9e3;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .btn-header {
+        width: 100%;
+    }
+
+    .offer-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-item {
+        justify-content: flex-start;
+        padding: 5px 0;
+    }
+
+    .btn-xl {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+}
+.dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ou 'contain', caso não queira cortar nenhuma parte da imagem */
+    border-radius: 8px; /* Ajuste para acompanhar o arredondamento interno da moldura */
+}
+
+.classroom-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Ajuste para encaixar com a borda arredondada */
+}
+
+/* Overlay Escuro de Fundo */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  padding: 15px;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Container do Pop-up */
+.popup-container {
+  background: #ffffff;
+  border-radius: 20px; /* Bordas arredondadas */
+  max-width: 460px;
+  width: 100%;
+  padding: 30px 25px 20px 25px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  box-sizing: border-box;
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Botão Fechar */
+.popup-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #888888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.popup-close:hover {
+  color: #111111;
+}
+
+/* Espaço da Logo */
+.popup-logo-holder {
+  margin-bottom: 15px;
+}
+.popup-logo {
+  max-height: 50px;
+  width: auto;
+}
+
+/* Elementos do Texto */
+.popup-badge {
+  background-color: #fff3cd;
+  color: #856404;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.popup-content h2 {
+  color: #0d5d38; /* Cor principal verde */
+  font-size: 22px;
+  font-weight: 800;
+  margin: 5px 0 12px 0;
+  line-height: 1.2;
+}
+
+.popup-subtitle {
+  color: #444444;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.highlight-text {
+  color: #d9534f;
+  font-weight: 700;
+}
+
+/* Lista de Benefícios */
+.popup-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: left;
+  background-color: #f8faf9;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px dashed #cde2d7;
+}
+
+.popup-benefits li {
+  font-size: 13px;
+  color: #333333;
+  margin-bottom: 6px;
+}
+.popup-benefits li:last-child {
+  margin-bottom: 0;
+}
+
+/* Botão Chamada para Ação (CTA) */
+.popup-btn-cta {
+  display: block;
+  background: linear-gradient(135deg, #107c41, #0b5d38);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(16, 124, 65, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.popup-btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 124, 65, 0.6);
+}
+
+/* Checkbox do Rodapé */
+.popup-footer {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid #eeeeee;
+}
+
+.checkbox-container {
+  font-size: 12px;
+  color: #666666;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.brand-logo {
+    max-height: 45px; /* Ajuste a altura máxima conforme o tamanho do seu cabeçalho */
+    width: auto;     /* Mantém a proporção da imagem sem distorcer */
+    display: block;
+}
+/* Container Principal da Navegação */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, Menu na direita */
+    align-items: center;            /* Centraliza verticalmente na mesma linha */
+    padding: 15px 20px;
+}
+
+/* Área e Tamanho da Logo */
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    max-height: 45px; /* Define altura máxima adequada para a navbar */
+    width: auto;     /* Mantém a proporção real da imagem */
+    display: block;
+}
+
+/* Menu na Mesma Linha */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;       /* Espaçamento entre os links do menu */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+/* 1. Fundo da Barra de Navegação (Verde Água Bem Claro) */
+.nav-bar {
+    background-color: #f0f7f4; /* Verde água claro e suave */
+    border-bottom: 1px solid #d4e8dd; /* Borda bem suave na parte inferior */
+    width: 100%;
+}
+
+/* 2. Container Principal (Alinhamento em Linha) */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* 3. Estilo da Logo */
+.brand-logo {
+    max-height: 45px;
+    width: auto;
+    display: block;
+}
+
+/* 4. Estilo Geral dos Links do Menu */
+.nav-menu li a {
+    color: #111111; /* Cor Preta antes de clicar */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* 5. Mudança de Cor para VERDE (Ao passar o mouse, clicar e links visitados) */
+.nav-menu li a:visited {
+    color: #107c41; /* Mantém o Verde após clicar */
+}
+
+.nav-menu li a:hover,
+.nav-menu li a:active {
+    color: #107c41; /* Verde no foco e no clique */
+}
+
+/* Exceção: Botão 'Garantir Vaga' (Mantém o estilo de botão verde) */
+.btn-garantir {
+    border: 2px solid #107c41 !important;
+    color: #107c41 !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-garantir:hover {
+    background-color: #107c41 !important;
+    color: #ffffff !important;
+}
+
+.footer-logo {
+    max-height: 30px; /* Ajusta a altura da logo no rodapé */
+    width: auto;
+    vertical-align: middle; /* Alinha a imagem verticalmente com o texto ao lado */
+    margin-right: 5px;
+}
+/* Container do Divisor de Rolagem */
+.scroll-divider {
+    text-align: center;
+    padding: 20px 0;
+    background-color: transparent;
+}
+
+/* Link e Ícone Chevron */
+.scroll-divider a {
+    color: #107c41; /* Verde principal da marca */
+    font-size: 24px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: bounceUpDown 2s infinite; /* Ativa a animação contínua */
+}
+
+/* Efeito ao passar o mouse */
+.scroll-divider a:hover {
+    color: #0b5d38;
+    transform: scale(1.2);
+}
+
+/* Animação Flutuante (Bounce) */
+@keyframes bounceUpDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(8px);
+    }
+    60% {
+        transform: translateY(4px);
+    }
+}
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #ffffff !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Aplica a mesma animação de flutuação dos chevrons */
+    animation: bounceUpDown 2s infinite;
+}
+
+/* Efeito ao passar o mouse */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    background-color: #20ba5a;
+}
+
+/* Responsividade para telas menores / celulares */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+.offer-action {
+    margin-top: 25px; /* Adiciona o espaço de aproximadamente uma linha antes do botão */
+}
